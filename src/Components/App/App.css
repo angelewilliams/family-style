@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +30,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+h1 {
+  font-family: 'Unica One', sans-serif;
+}
+main {
+  border: 2px solid rgb(145, 98, 11);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+
 }

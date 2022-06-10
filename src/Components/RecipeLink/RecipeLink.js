@@ -1,11 +1,12 @@
 import React from 'react'
 import './RecipeLink.css'
 
-const RecipeLink = () => {
+const RecipeLink = ({title}) => {
 
-    return(
+    return (
         <article className='recipe-link'>
-            <h2>this is a recipe title</h2>
+            <h2>{title}</h2>
+            <p>hello, this is supposed to be a recipe link</p>
         </article>
     )
 }

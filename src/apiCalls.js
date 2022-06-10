@@ -1,21 +1,23 @@
 
 const fetchRecipes = () => {
-    fetch('http://localhost:3000/api/v1/recipes')
+   return fetch('http://localhost:3001/api/v1/recipes')
         .then(response => response.json())
 
 }
 
 const fetchSingleRecipe = (id) => {
-    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v1/recipes/${id}`)
+    return fetch(`http://localhost:3001/api/v1/recipes/${id}`)
         .then(response => {
             if (response.ok) {
                 return response.json()
+            } else {
+                throw new Error ('problem')
             }
         })
 }
 
 const postRecipe = (title, url, notes, submittedBy, group, tags) => {
-    return fetch(`http://localhost:3001/api/v1/recipes`, {
+    return fetch('http://localhost:3001/api/v1/recipes', {
         method: 'POST',
         body: JSON.stringify({
             "title": title,

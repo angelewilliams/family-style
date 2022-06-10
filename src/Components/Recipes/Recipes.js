@@ -2,12 +2,27 @@ import React from 'react'
 import './Recipes.css'
 import RecipeLink from './../RecipeLink/RecipeLink'
 
-const Recipes = () => {
+const Recipes = ({recipeProps}) => {
+    const recipesToShow = recipeProps.map((recipe) => {
 
-    return(
-        <section className='recipes-wrapper'>
-            <div>placeholder</div>
-        </section>
+        return (
+            <RecipeLink
+                title={recipe.title}
+                link={recipe.url}
+                tag={recipe.tag}
+                id={recipe.id}
+                key={recipe.id}
+                notes={recipe.notes}
+                submittedBy={recipe.submittedBy}
+                group={recipe.group}
+            />
+
+        )
+    })
+    return (
+        <div className='recipes-wrapper'>
+            {recipesToShow}
+        </div>
     )
 }
 

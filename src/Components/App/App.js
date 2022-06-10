@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { Route, Switch, NavLink } from 'react-router-dom';
 import { fetchRecipes } from './../../apiCalls'
 import Recipes from './../Recipes/Recipes'
+import Nav from './../Nav/Nav'
 
 // import logo from './../Images/logo.svg';
 import './App.css';
@@ -9,30 +10,44 @@ import './App.css';
 const App = () => {
   const [group, setGroup] = useState('williams');
   const [recipes, setRecipes] = useState([]);
-
+  const [error, setError] = useState('');
 
   useEffect(() => {
     fetchRecipes()
-    .then(recipes => console.log(recipes))
-    .then(console.log('something may have worked'))
+      .then(fetchedRecipes => setRecipes(fetchedRecipes))
+      .then(console.log('line18 executed', recipes))
   }, []);
 
+
+  const addRecipe = () => {
+    console.log('add recipe invoked')
+  }
+
   return (
-    <body className="App">
-      <header className="App-header">
-      
-        <img src='broken.link' className="App-logo" alt="logo" />
-      </header>
+    <main>
+      <Nav group={group} addRecipe={addRecipe} />
       <Switch>
 
-        <Route exact path="/:groupId/recipeLinks">
-          <Recipes recipesProps='williams'/>
-        </Route>
+        <Route exact path="/williams/" render={()=>{ 
+          <Recipes recipeProps={recipes} />}}
+        />
+         
+
+        <Route
+          exact path="/"
+          render={() =>
+            <>
+              <h2>Please select a group's recipes to view</h2>
+              <NavLink className="page-title" to="/williams/">
+                <h3 className="page-title">Williams</h3>
+              </NavLink>
+              <p>welcome to the void</p>
+            </>
+          }
+        />
+
       </Switch>
-
-
-    </body>
-
+    </main>
 
   );
 }
@@ -48,6 +63,17 @@ export default App;
 // <NavLink to="/favorites">Favorites</NavLink>
 // <NavLink to="/recipeLinks">Recipes</NavLink>
 
-{/* <Route exact path="/">
+/* <Route exact path="/">
 <LandingPage />
-</Route> */}
+</Route>
+
+
+OTHER
+ <Route
+         exact path="/:groupId/submitRecipe"
+         render={({match}) => {
+           const groupId = match.params.groupId
+           return <Recipes id={groupId} />
+         }}
+       />
+*/
