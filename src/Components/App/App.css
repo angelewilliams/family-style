@@ -42,3 +42,45 @@ main {
   flex-wrap: nowrap;
 
 }
+
+h2, h3, h4 {
+  font-family: 'PT Sans', sans-serif;
+
+}
+/* font-family: 'Baumans', cursive;
+font-family: 'Coiny', cursive;
+font-family: 'Damion', cursive;
+font-family: 'Unica One', cursive; */
+
+.group-link {
+  color: #F283D3;
+  text-decoration: none;
+  font-size: 4vw;
+  margin-left:1vw;
+}
+
+.select-group {
+  color: #383636;
+  width: 50vw;
+  background-color: #F8F7F2;
+  border: solid 2px pink;
+  border-radius: 30px;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+
+/*
+blue color: #5847E6;
+pink color: #F283D3;
+yellow color: #FEDD78;
+green color: #4DC9C1;
+cream color: #E9E6D9;
+whiteish color: #F8F7F2;
+<a target="_blank" href="https://icons8.com/icon/85339/material-sharp">Material Sharp</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+*/

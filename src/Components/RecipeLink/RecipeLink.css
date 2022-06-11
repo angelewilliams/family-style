@@ -1,0 +1,19 @@
+hr {
+    width:45vw;
+    text-align:left;
+    margin-left:0
+}
+
+.recipe-link-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    /* justify-content: space-between; */
+    align-items: center;
+    width: 70vw;
+    height: 17vw;
+    border: solid 2px saddlebrown;
+    padding-left: 10px;
+    padding-right: 10px;
+}

@@ -2,22 +2,39 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch, NavLink } from 'react-router-dom';
 import { fetchRecipes } from './../../apiCalls'
 import Recipes from './../Recipes/Recipes'
+import LoadingSpinner from '../Loading/LoadingSpinner';
 import Nav from './../Nav/Nav'
+import NoMatch from '../NoMatch/NoMatch';
 
 // import logo from './../Images/logo.svg';
 import './App.css';
 
 const App = () => {
-  const [group, setGroup] = useState('williams');
+  const [group, setGroup] = useState('group1');
   const [recipes, setRecipes] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    fetchRecipes()
-      .then(fetchedRecipes => setRecipes(fetchedRecipes))
-      .then(console.log('line18 executed', recipes))
-  }, []);
+  // useEffect(() => {
+  //   fetchRecipes()
+  //     .then(fetchedRecipes => {
+  //       console.log( 'line 18 executed' , fetchedRecipes)
+  //       return setRecipes(fetchedRecipes)})
+  //     .then(console.log('line 20 executed', recipes))
+  // }, []);
 
+  const handleFetch = () => {
+    setIsLoading(true);
+    fetchRecipes()
+      .then(fetchedRecipes => {
+        console.log( 'line 18 executed' , fetchedRecipes)
+        setRecipes(fetchedRecipes.recipes)
+        setIsLoading(false)})
+      .catch(() => {
+         setError("Unable to fetch recipes at this time");
+         setIsLoading(false);
+      });
+  };
 
   const addRecipe = () => {
     console.log('add recipe invoked')
@@ -27,25 +44,33 @@ const App = () => {
     <main>
       <Nav group={group} addRecipe={addRecipe} />
       <Switch>
+        
 
-        <Route exact path="/williams/" render={()=>{ 
-          <Recipes recipeProps={recipes} />}}
-        />
+        <Route exact path="/group1">
+          {isLoading ? <LoadingSpinner /> : <Recipes recipeProps={recipes} />}
+          
+        </Route>
          
 
         <Route
           exact path="/"
           render={() =>
-            <>
+            <> 
+            {isLoading ? <LoadingSpinner /> : ''}
+            {error && <div className="error">{error}</div>}
+            <section className="select-group">
               <h2>Please select a group's recipes to view</h2>
-              <NavLink className="page-title" to="/williams/">
-                <h3 className="page-title">Williams</h3>
+              <NavLink className="group-link" to="/group1/">
+                <h3 className="group-link" onClick={handleFetch}>group1</h3>
               </NavLink>
-              <p>welcome to the void</p>
+              </section>
             </>
           }
         />
 
+        <Route path="*">
+            <NoMatch />
+          </Route>
       </Switch>
     </main>
 

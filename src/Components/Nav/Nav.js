@@ -7,14 +7,14 @@ const Nav = ({group, addRecipe}) => {
     return (
         <nav>
       
-            <NavLink className="page-title" to="/:groupId/">
+            <NavLink className="page-title" to="/group1/">
                 <h1 className="page-title">familystyle</h1>
             </NavLink>
             <div>
             <span className="dot" text={group}> 
                 <img src="" alt=""/>
             </span>
-            <NavLink className="dot" to="/:groupId/submitRecipe" activeClassName="selected">
+            <NavLink className="dot" to="/group1/submitRecipe" activeClassName="selected">
                 <img src="" alt=""/>
             </NavLink>
             </div>

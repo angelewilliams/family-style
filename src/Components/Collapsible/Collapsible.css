@@ -1,0 +1,38 @@
+.collapsible {
+    color: purple;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.toggle { 
+    background: rgb(134, 97, 97);
+    color: white;
+    border: unset;
+    cursor: pointer;
+    padding: 0.3rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+}
+
+.collapsible .notes-content {
+   color: orangered;
+   margin: 0.2rem;
+}
+
+
+.recipe-details-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.recipe-description{
+    margin:10px;
+}

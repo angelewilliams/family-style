@@ -21,7 +21,7 @@ const Recipes = ({recipeProps}) => {
     })
     return (
         <div className='recipes-wrapper'>
-            {recipesToShow}
+            {recipeProps.length ? recipesToShow : <p>'error loading'</p>}
         </div>
     )
 }
