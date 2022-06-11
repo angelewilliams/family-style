@@ -4,7 +4,11 @@ import './SubmitRecipe.css'
 
 const SubmitRecipe = () => {
     return(
-        <></>
+        <section>
+            <form>
+                
+            </form>
+        </section>
     )
 }
 

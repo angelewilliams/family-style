@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+hidden {
+  display: none;
+}
+
+/* 
+universal things:
+font-family: 'Baumans', cursive;
+font-family: 'Coiny', cursive;
+font-family: 'Damion', cursive;
+font-family: 'Unica One', cursive;
+
+blue color: #5847E6;
+pink color: #F283D3;
+yellow color: #FEDD78;
+green color: #4DC9C1;
+cream color: #E9E6D9;
+whiteish color: #F8F7F2;
+<a target="_blank" href="https://icons8.com/icon/85339/material-sharp">Material Sharp</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+*/
