@@ -7,6 +7,10 @@ import salad from './../../Images/recipe-tag-salad.png'
 import drink from './../../Images/recipe-tag-drink.png'
 import breakfast from './../../Images/recipe-tag-breakfast.png'
 import snack from './../../Images/recipe-tag-snack.png'
+import addRecipe from './../../Images/add-recipe-icon.png'
+import person from './../../Images/person-icon.png'
+import favorites from './../../Images/favorite-recipes-icon.png'
+
 
 const Graphic = ({tag}) => {
     let altText = `${tag} icon`
@@ -31,6 +35,15 @@ const Graphic = ({tag}) => {
         }
         if(tag === 'snack'){
             return snack
+        }
+        if(tag === 'favorite'){
+            return favorites
+        }
+        if(tag === 'person'){
+            return person
+        }
+        if(tag === 'addRecipe'){
+            return addRecipe
         }
     }
 

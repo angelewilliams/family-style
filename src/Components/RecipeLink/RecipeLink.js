@@ -13,9 +13,9 @@ const RecipeLink = ({ title, link, tag, id, notes, submittedBy, group }) => {
             <Graphic tag={tag} />
 
             <div className="recipe-wrap">
-                <a target="_blank" href={link}>{title}</a>
+                <a target="_blank" href={link} className="external-link">{title}</a>
                 <hr className="recipe-link-divider"/>
-                <Collapsible key={id} notes={notes} submittedBy={submittedBy} tag={tag} className="recipe-description" />
+                <Collapsible key={id} notes={notes} submittedBy={submittedBy} tag={tag} id={id} className="recipe-description" />
             </div>
         </article>
     )

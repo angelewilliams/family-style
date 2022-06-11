@@ -61,7 +61,7 @@ const App = () => {
             <section className="select-group">
               <h2>Please select a group's recipes to view</h2>
               <NavLink className="group-link" to="/group1/">
-                <h3 className="group-link" onClick={handleFetch}>group1</h3>
+                <h3 className="group-link" onClick={handleFetch}>Showcase</h3>
               </NavLink>
               </section>
             </>
