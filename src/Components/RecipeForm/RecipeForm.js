@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './RecipeForm.css'
+import backArrow from './../../Images/back.png'
 
-
-const RecipeForm = ({ submitRecipe }) => {
+const RecipeForm = ({ submitRecipe, handleFetch }) => {
     const [formData, setFormData] = useState({
         title: '',
         url: '',
         notes: '',
         submittedBy: '',
-        group: 'group1',
-        tag: ''
+        tag: 'breakfast'
     })
-    const [submitted, setSubmitted]= useState(false)
+    const [submitted, setSubmitted]= useState(true)
 
     const [error, setError] = useState('');
 
@@ -31,19 +31,34 @@ const RecipeForm = ({ submitRecipe }) => {
     const handleTagSelect = (e) => {
         setFormData({ ...formData, tag: e.target.value })
     }
+    const resetView = () => {
+        setTimeout(() => clearForm(), 3000);
+      }
+      
+    const clearForm = () => {
+        setFormData({
+            title: '',
+            url: '',
+            notes: '',
+            submittedBy: '',
+            tag: 'breakfast'
+        })
+        setSubmitted(false)
+
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setSubmitted(true)
         submitRecipe(formData)
+        resetView()  
     }
 
     return (
-        <div>
-            <p>helloooo</p>
+        <div className="submit-view">
             <section className="form-wrapper">
                 <form className="recipe-link-form" onSubmit={handleSubmit}>
-                    {submitted ? <div>You have successfully added a recipe</div> : null}
+                    {submitted ? <div className="successful-submit">You have successfully added a recipe</div> : null}
                     <input
                         onChange={handleChangeTitle}
                         type='text'
@@ -72,13 +87,13 @@ const RecipeForm = ({ submitRecipe }) => {
                     <input
                         onChange={handleChangeSubmittedBy}
                         type='text'
-                        placeholder='your name'
+                        placeholder='Your name'
                         name='submittedBy'
                         value={formData.submittedBy}
                         required
                     />
-
-                    <select value={formData.tag} onChange={handleTagSelect} required>
+                    <label for="tags">Please select a tag:</label>
+                    <select name="tags" value={formData.tag} onChange={handleTagSelect} required>
                         <option value="breakfast">breakfast</option>
                         <option value="drink">drink</option>
                         <option value="dessert">dessert</option>
@@ -91,19 +106,15 @@ const RecipeForm = ({ submitRecipe }) => {
 
                     <button type="submit">SUBMIT</button>
                 </form>
-
+                
             </section>
+
+         <Link className="return-to-recipes" to="/group1" onClick={handleFetch}> 
+            <img src={backArrow} alt="back arrow icon" className="small-icon"/>
+            <h3>Return to Recipes</h3>
+         </Link> 
         </div>
     )
 }
 
 export default RecipeForm
-
-/*
-
-  const [title, setGroup] = useState('');
-    const [url, setUrl] = useState('');
-    const [notes, setNotes] = useState('');
-    const [submittedBy, setSubmit] = useState('');
-    const [tag, setTag] = useState('');
-} */

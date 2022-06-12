@@ -39,12 +39,19 @@ const App = () => {
       });
   };
 
-  const submitRecipe = (value) => {
+  const submitRecipe = ({title, url, notes, submittedBy, tag}) => {
     setIsLoading(true);
-    console.log(value)
-    // postRecipe('food', 'no','no', 'me', group, 'dessert').then(response => console.log(response))
+     postRecipe(title, url, notes, submittedBy, group, tag)
+      .then(fetchRecipes()
+      .then(fetchedRecipes => {
+        setRecipes(fetchedRecipes)
+        setIsLoading(false)
+      }))
+      .catch(() => {
+        setError("Unable to fetch recipes at this time");
+        setIsLoading(false);
+      })
     
-    console.log('add recipe invoked with this data: ', value)
   }
 
 
@@ -67,7 +74,7 @@ const App = () => {
 
         <Route exact path="/group1/submitRecipe"
           render={() =>
-            <RecipeForm submitRecipe={submitRecipe} />
+            <RecipeForm submitRecipe={submitRecipe} handleFetch={handleFetch} />
           }
         />
 
