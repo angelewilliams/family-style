@@ -3,7 +3,9 @@ import './Recipes.css'
 import RecipeLink from './../RecipeLink/RecipeLink'
 import ErrorPage from '../ErrorPage/ErrorPage'
 
-const Recipes = ({recipeProps, addToFavorites , removeFromFavorites}) => {
+const Recipes = ({recipeProps, addToFavorites , removeFromFavorites, handleFetch}) => {
+ 
+   
     const recipesToShow = recipeProps.map((recipe) => {
 
         return (
@@ -24,7 +26,7 @@ const Recipes = ({recipeProps, addToFavorites , removeFromFavorites}) => {
     })
     return (
         <div className='recipes-wrapper'>
-            {recipeProps.length ? recipesToShow : <ErrorPage context="favorites"/>}
+            {recipeProps.length ? recipesToShow : <ErrorPage context="favorites" handleFetch={handleFetch}/>}
         </div>
     )
 }
