@@ -9,7 +9,7 @@ const NoMatch = () => {
     return (
       <div className="no-match">
         <h3>
-          Looks like Angele did not code anything for <code>{location.pathname}</code>  
+          Uh oh, looks like Angele did not code anything for <code>{location.pathname} </code> yet.
         </h3>
         <h4>But here's an awesome turtle her sister drew:</h4>
         <img src={awesomeTurtle} alt="awesome turtle" className="awesome-turtle"/>

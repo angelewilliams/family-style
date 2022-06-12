@@ -1,12 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Nav.css'
-import Graphic from '../Graphic/Graphic'
 import submitRecipe from './../../Images/add-recipe-icon.png'
 import person from './../../Images/person-icon.png'
 import favorites from './../../Images/favorite-recipes-icon.png'
 
-const Nav = ({group, addRecipe}) => {
+const Nav = ({group, handleFetch}) => {
 
     return (
         <nav>
@@ -24,10 +23,10 @@ const Nav = ({group, addRecipe}) => {
             <NavLink id="favorites"  to="/group1/favorites" activeClassName="selected">
                 <img src={favorites} alt="heart icon to indicate favorited recipes" className="dot"/>
             </NavLink>
-            <span  id="group" text={group}> 
-                <img src={person} alt="head and shoulders icon to indicate person/group logged in as" className="dot"/>
+            <NavLink  id="group" to="/group1" text={group} onClick={handleFetch}> 
+                <img src={person} alt="head and shoulders icon to indicate person/group logged in as" className="dot" text="Current group is Showcase"/>
 
-            </span>
+            </NavLink>
 
            
             </div>
