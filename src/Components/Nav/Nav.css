@@ -15,7 +15,7 @@ nav {
 .page-title {
     color: #E9E6D9;
     text-decoration: none;
-    font-size: 4vw;
+    font-size: 4.5vw;
     margin-left:1vw;
 
 }
@@ -24,7 +24,7 @@ nav {
 .page-title:visited { text-decoration: none; }
 
 .page-title:hover {
-    color: #FEDD78;
+    color: #ffb300;
  }
 
 
