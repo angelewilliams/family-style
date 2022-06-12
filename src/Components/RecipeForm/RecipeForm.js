@@ -11,7 +11,7 @@ const RecipeForm = ({ submitRecipe, handleFetch }) => {
         submittedBy: '',
         tag: 'breakfast'
     })
-    const [submitted, setSubmitted]= useState(true)
+    const [submitted, setSubmitted]= useState(false)
 
     const [error, setError] = useState('');
 
@@ -32,7 +32,8 @@ const RecipeForm = ({ submitRecipe, handleFetch }) => {
         setFormData({ ...formData, tag: e.target.value })
     }
     const resetView = () => {
-        setTimeout(() => clearForm(), 3000);
+        setTimeout(() => setSubmitted(false)
+        , 3000);
       }
       
     const clearForm = () => {
@@ -43,8 +44,6 @@ const RecipeForm = ({ submitRecipe, handleFetch }) => {
             submittedBy: '',
             tag: 'breakfast'
         })
-        setSubmitted(false)
-
     }
 
     const handleSubmit = (e) => {
@@ -52,6 +51,8 @@ const RecipeForm = ({ submitRecipe, handleFetch }) => {
         setSubmitted(true)
         submitRecipe(formData)
         resetView()  
+        clearForm()
+        
     }
 
     return (

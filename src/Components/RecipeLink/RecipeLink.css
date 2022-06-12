@@ -1,20 +1,52 @@
 hr {
     width:45vw;
     text-align:left;
-    margin-left:0
+    margin-left:0;
+    color: #383636;
+
 }
+a {
+    color: #383636;
+    text-decoration: none;
+    font-weight: bolder;
+    font-family: 'Baumans', sans-serif;
+    font-size: larger;
+
+}
+
+a:hover {
+    color:#4DC9C1
+}
+.favorite-heart {
+    width: 20px;
+    margin-bottom: -4px;
+    cursor: pointer;
+}
+.favorite-heart:hover {
+    width: 25px;
+}
+
 
 .recipe-link-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
-    /* justify-content: space-between; */
+    justify-content: flex-start;
     align-items: center;
     width: 70vw;
     height: 17vw;
-    border: solid 2px saddlebrown;
-    padding-left: 10px;
-    padding-right: 10px;
-    /* border-radius: 30px; */
+    border: solid 3px #5847E6;
+    padding-left: 4vw;
+    border-radius: 50px;
+    margin: 10px;
+    overflow-y: scroll;
+}
+
+.recipe-wrap {
+    margin-left: 2vw;
+}
+
+.external-link {
+    margin-left: 1vw;
 }

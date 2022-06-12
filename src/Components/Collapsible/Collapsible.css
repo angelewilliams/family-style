@@ -1,5 +1,5 @@
 .collapsible {
-    color: purple;
+    color: #383636;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -10,17 +10,22 @@
 
 
 .toggle { 
-    background: rgb(134, 97, 97);
-    color: white;
-    border: unset;
+    background-color: #E9E6D9;
+    color: #383636;
+    border: none;
     cursor: pointer;
-    padding: 0.3rem;
-    border-radius: 5px;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    border-radius: 10px;
     margin: 0.5rem;
+    font-size: large;
+    font-weight: bold;
 }
 
 .collapsible .notes-content {
-   color: orangered;
+   color: #383636;
    margin: 0.2rem;
 }
 
@@ -33,6 +38,16 @@
     align-items: center;
     flex-wrap: wrap;
 }
-.recipe-description{
+.recipe-attribute{
     margin:10px;
+    background-color: #E9E6D9;
+    color: #383636;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+    font-size: large;
+    font-weight: lighter;
 }

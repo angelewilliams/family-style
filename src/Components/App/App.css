@@ -19,28 +19,18 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 h1 {
   font-family: 'Unica One', sans-serif;
 }
 main {
-  border: 2px solid rgb(145, 98, 11);
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: nowrap;
   font-family: 'PT Sans', sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
 h2, h3, h4 {
