@@ -25,11 +25,12 @@ const App = () => {
   const [error, setError] = useState('');
 
 
-  useEffect(() => {
 
-    localStorage.setItem('favRecipes', JSON.stringify(favoritedRecipes))
-   
-  }, []);
+  // useEffect(() => {
+  //   const localData = localStorage.getItem('favRecipes') 
+  //     if(localData) {
+  //       setFavorites(JSON.parse(localData))}
+  // }, []);
 
  
 
@@ -37,16 +38,25 @@ const App = () => {
     let recipeInt = parseInt(recipeID.slice(6))
     let recipeToAdd = recipes.find((recipe) => recipeInt === recipe.id )
       if(!favoritedRecipes.includes(recipeToAdd)){
-    setFavorites([...favoritedRecipes, recipeToAdd])}
+         setFavorites([...favoritedRecipes, recipeToAdd])
+          // localStorage.setItem('favRecipes', JSON.stringify(favoritedRecipes))
+
+      }
   }
   const removeFromFavorites= (recipeID) => {
     let recipeInt = parseInt(recipeID.slice(6))
     let newFavs = favoritedRecipes.filter((recipe) => recipeInt !== recipe.id )
     setFavorites(newFavs)
+    // localStorage.setItem('favRecipes', JSON.stringify(newFavs))
+
   }
 
-
-
+  
+  // const storeFavorites = () => {
+  //   localStorage.setItem('favRecipes', JSON.stringify(favoritedRecipes))
+  //   const localData = localStorage.getItem('favRecipes') 
+  //   setFavorites({localData ? JSON.parse(localData) : []})
+  // }
 
 
   const handleFetch = () => {
