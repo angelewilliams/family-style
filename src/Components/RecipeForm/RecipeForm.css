@@ -1,0 +1,77 @@
+.submit-view {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.successful-submit {
+    color:#227a74;
+    font-family: 'Baumans';
+    text-align: center;
+    font-size: 2vw;
+    
+}
+.recipe-link-form {
+    color:rgb(65, 62, 62);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+    padding: 3vw;
+    width: 65vw;
+}
+
+.recipe-link-form input, button, select {
+    margin: 5px;
+    font-family: 'PT Sans', sans-serif;
+    border-radius: 10px;
+    border: solid 2px #FEDD78;
+    padding: 0.5vw;
+}
+
+.recipe-link-form button, select {
+   cursor: pointer;
+
+}
+
+.recipe-link-form button {
+    background-color: #E9E6D9;
+    border-radius: 25px;
+    border: solid 3px #4DC9C1; 
+}
+
+.recipe-link-form button:hover {
+    background-color: #4DC9C1;
+    border: solid 3px white;
+    font-weight: bolder;
+}
+
+.return-to-recipes {
+    text-decoration: none;
+    background-color: #585656;
+    display:flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    color: #F8F7F2; 
+    width: 90%;
+    padding: 0.3vw;
+    border-radius: 25px;
+}
+
+.return-to-recipes h3{
+    margin: 2px;
+
+}
+.recipe-link-form label {
+    padding-left: 10px;
+    font-size: medium;
+}
+.small-icon {
+    height: 2vw;
+}

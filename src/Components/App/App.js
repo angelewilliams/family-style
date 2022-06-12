@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Switch, NavLink } from 'react-router-dom';
-import { fetchRecipes } from './../../apiCalls'
+import { fetchRecipes, postRecipe } from './../../apiCalls'
 import Recipes from './../Recipes/Recipes'
 import LoadingSpinner from '../Loading/LoadingSpinner';
 import Nav from './../Nav/Nav'
 import NoMatch from '../NoMatch/NoMatch';
+import RecipeForm from '../RecipeForm/RecipeForm'
 
 // import logo from './../Images/logo.svg';
 import './App.css';
+import GroupSelect from '../GroupSelect/GroupSelect';
 
 const App = () => {
   const [group, setGroup] = useState('group1');
@@ -27,50 +29,60 @@ const App = () => {
     setIsLoading(true);
     fetchRecipes()
       .then(fetchedRecipes => {
-        console.log( 'line 18 executed' , fetchedRecipes)
+        console.log('line 18 executed')
         setRecipes(fetchedRecipes.recipes)
-        setIsLoading(false)})
+        setIsLoading(false)
+      })
       .catch(() => {
-         setError("Unable to fetch recipes at this time");
-         setIsLoading(false);
+        setError("Unable to fetch recipes at this time");
+        setIsLoading(false);
       });
   };
 
-  const addRecipe = () => {
-    console.log('add recipe invoked')
+  const submitRecipe = ({title, url, notes, submittedBy, tag}) => {
+    setIsLoading(true);
+     postRecipe(title, url, notes, submittedBy, group, tag)
+      .then(fetchRecipes()
+      .then(fetchedRecipes => {
+        setRecipes(fetchedRecipes)
+        setIsLoading(false)
+      }))
+      .catch(() => {
+        setError("Unable to fetch recipes at this time");
+        setIsLoading(false);
+      })
+    
   }
+
+
+
 
   return (
     <main>
-      <Nav group={group} addRecipe={addRecipe} />
+      <Nav group={group} handleFetch={handleFetch} />
+      
       <Switch>
-        
-
-        <Route exact path="/group1">
-          {isLoading ? <LoadingSpinner /> : <Recipes recipeProps={recipes} />}
-          
-        </Route>
-         
-
         <Route
           exact path="/"
           render={() =>
-            <> 
-            {isLoading ? <LoadingSpinner /> : ''}
-            {error && <div className="error">{error}</div>}
-            <section className="select-group">
-              <h2>Please select a group's recipes to view</h2>
-              <NavLink className="group-link" to="/group1/">
-                <h3 className="group-link" onClick={handleFetch}>Showcase</h3>
-              </NavLink>
-              </section>
-            </>
+            <GroupSelect handleFetch={handleFetch}/>
+          }
+        />
+        <Route exact path="/group1">
+          {isLoading ? <LoadingSpinner /> : <Recipes recipeProps={recipes} />}
+        </Route>
+
+        <Route exact path="/group1/submitRecipe"
+          render={() =>
+            <RecipeForm submitRecipe={submitRecipe} handleFetch={handleFetch} />
           }
         />
 
+
+
         <Route path="*">
-            <NoMatch />
-          </Route>
+          <NoMatch />
+        </Route>
       </Switch>
     </main>
 
@@ -92,13 +104,27 @@ export default App;
 <LandingPage />
 </Route>
 
+postRecipe(value.title, value.url, value.notes, value.submittedBy, value.group, value.tag)
+      .then(response => console.log(response))
 
+      .catch(() => {
+        setError("Unable to fetch recipes at this time");
+        setIsLoading(false);
+      });
 OTHER
- <Route
-         exact path="/:groupId/submitRecipe"
-         render={({match}) => {
-           const groupId = match.params.groupId
-           return <Recipes id={groupId} />
-         }}
-       />
+       .then(fetchedRecipes => {
+        console.log('line 47 executed' , fetchedRecipes)
+        setRecipes(fetchedRecipes.recipes)
+        setIsLoading(false)
+      })
+
+
+  
+ const handleWatchMovie = (id, rating, user) => {
+    postUserRating(id, rating, user)
+      .then(response => {
+        console.log(response);
+        this.state.user.watchedMovies.push(response.post)
+        this.setState({...this.state, modal: false})
+      })
 */

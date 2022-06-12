@@ -16,7 +16,7 @@ const fetchSingleRecipe = (id) => {
         })
 }
 
-const postRecipe = (title, url, notes, submittedBy, group, tags) => {
+const postRecipe = (title, url, notes, submittedBy, group, tag) => {
     return fetch('http://localhost:3001/api/v1/recipes', {
         method: 'POST',
         body: JSON.stringify({
@@ -25,7 +25,7 @@ const postRecipe = (title, url, notes, submittedBy, group, tags) => {
             "notes": notes,
             "submittedBy": submittedBy,
             "group": group,
-            "tags": tags,
+            "tag": tag,
         }),
         headers: {
             'Content-Type': 'application/json'
