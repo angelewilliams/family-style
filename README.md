@@ -7,10 +7,12 @@
 
 ------
 # FamilyStyle
-![image placeholder](link-here)
+ Being from a food oriented family, 'sharing family style' is what we always said when going to restaurants and in general sharing food. We also were constantly asking to get the recipe. Through many years of collecting stained index cards, photocopies, emails, snail mail, and maybe even a fax or two, I thought that it would be wise to have one central place for groups of people (families, friends, bookclubs etc) to have a recipe hub that they can store loved and shared recipes and reference from anywhere. 
+
+![Recipes](/src/Images/recipes.png)
 
 ## About The Project
-FamilyStyle
+FamilyStyle was a solo project assigned in the third module of the Front End Engineering program at Turing School of Software and Design. The learning goals were to implement React, plan and execute an MVP and display and maniupulate data from RESTful APIs. 
 
 ## Technologies
 * React | React Router
@@ -35,14 +37,16 @@ You can now view Caturday in the browser.
   Local:  http://localhost:3000
 ```
 
-5. When you are done exploring _**Caturday**_ make sure that you type `Control + C` in your terminal to stop the server before closing your Terminal.
+5. When you are done exploring _**FamilyStyle**_ make sure that you type `Control + C` in your terminal to stop the server before closing your Terminal.
 ---
 
 
 ## Using the Application
-Upon load, a user will see...
+Upon load, a user will see a page to select the group they wish to see the saved recipes for. At the time of this project, adding a login was beyond the MVP scope, however it is an extension I would like to do someday. 
 
-#### Error Handling
+![Favoriting a Recipe](https://media.giphy.com/media/yaBHXWlpc3O2FE3VeZ/giphy.gif)
+### Users can Add or Favorite Recipes 
+![Adding Recipe Form](https://media.giphy.com/media/1v0D9F8KTcvikezXOv/giphy.gif)
 
 
 ----
