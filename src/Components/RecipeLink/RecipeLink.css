@@ -50,3 +50,9 @@ a:hover {
 .external-link {
     margin-left: 1vw;
 }
+@media screen and (max-width: 768px) {
+  
+    .recipe-link-wrapper {
+      height: auto ; 
+    }
+  } 
