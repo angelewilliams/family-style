@@ -1,23 +1,12 @@
 
 const fetchRecipes = () => {
-   return fetch('http://localhost:3001/api/v1/recipes')
+   return fetch('https://family-style-api-aw.herokuapp.com/api/v1/recipes')
         .then(response => response.json())
 
 }
 
-const fetchSingleRecipe = (id) => {
-    return fetch(`http://localhost:3001/api/v1/recipes/${id}`)
-        .then(response => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                throw new Error ('problem')
-            }
-        })
-}
-
 const postRecipe = (title, url, notes, submittedBy, group, tag) => {
-    return fetch('http://localhost:3001/api/v1/recipes', {
+    return fetch('https://family-style-api-aw.herokuapp.com/api/v1/recipes', {
         method: 'POST',
         body: JSON.stringify({
             "title": title,
@@ -39,14 +28,4 @@ const postRecipe = (title, url, notes, submittedBy, group, tag) => {
 
 
 
-export { fetchRecipes, fetchSingleRecipe, postRecipe }
-
-// const fetchUsers = () => {
-//     return fetch(`http://localhost:3001/api/v1/users`)
-//     .then(response => {
-//       if (response.ok) {
-//         return response.json()
-//       } 
-//     })
-// }
-//Do I need fetchsingle recipe?
+export { fetchRecipes, postRecipe }

@@ -1,6 +1,6 @@
 describe('On load page and recipe display', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://localhost:3001/api/v1/recipes', { fixture: 'recipe-data.json' });
+    cy.intercept('GET', 'https://family-style-api-aw.herokuapp.com/api/v1/recipes', { fixture: 'recipe-data.json' });
     cy.visit('http://localhost:3000');
   });
 
@@ -31,7 +31,7 @@ describe('On load page and recipe display', () => {
     cy.get('.recipe-link-wrapper#1').contains('Angel Food Cake')
     cy.get('.recipe-link-wrapper#1').contains('Notes')
     cy.get('.recipe-details-wrapper').contains('From: Angele')
-    cy.get('.recipe-details-wrapper').contains('dessert')
+    cy.get('.recipe-details-wrapper').contains('Dessert')
   })
 
   it('Should be able to toggle notes section of recipe link display', () => {

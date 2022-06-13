@@ -7,7 +7,7 @@ const ErrorPage = ({context, handleFetch}) => {
     if(context == 'favorites'){
         return( <div>
             <h3>Looks like you haven't favorited any recipes yet!</h3>
-            <div><NavLink to="/group1" onClick={handleFetch}> Browse Recipes</NavLink> to see if you want to save any!</div>
+            <div className="errorLink"><NavLink className="return-group1" to="/group1" onClick={handleFetch}> Browse Recipes</NavLink> to see if you want to save any!</div>
         </div>
         )
     }
@@ -18,7 +18,7 @@ const ErrorPage = ({context, handleFetch}) => {
         <div>
             <h2>Hmm... something is not quite right</h2>
             <h3>{context}</h3>
-            <div>Please <NavLink to="/"> Return Home</NavLink> and try again later.</div>
+            <div className="errorLink">Please <NavLink to="/" > Return Home</NavLink> and try again later.</div>
         </div>
     )
 }
