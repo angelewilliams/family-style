@@ -62,6 +62,7 @@ const RecipeForm = ({ submitRecipe, handleFetch }) => {
                     {submitted ? <div className="successful-submit">You have successfully added a recipe</div> : null}
                     <input
                         onChange={handleChangeTitle}
+                        className="form-title"
                         type='text'
                         placeholder='Title'
                         name='title'
@@ -71,6 +72,7 @@ const RecipeForm = ({ submitRecipe, handleFetch }) => {
 
                     <input
                         onChange={handleChangeURL}
+                        className="form-url"
                         type='text'
                         placeholder='URL to recipe online or google doc'
                         name='url'
@@ -79,6 +81,7 @@ const RecipeForm = ({ submitRecipe, handleFetch }) => {
                     />
                     <input
                         onChange={handleChangeNotes}
+                        className="form-notes"
                         type='text'
                         placeholder='Notes about the recipe...'
                         name='notes'
@@ -87,6 +90,7 @@ const RecipeForm = ({ submitRecipe, handleFetch }) => {
                     />
                     <input
                         onChange={handleChangeSubmittedBy}
+                        className="form-submittedBy"
                         type='text'
                         placeholder='Your name'
                         name='submittedBy'
@@ -94,7 +98,7 @@ const RecipeForm = ({ submitRecipe, handleFetch }) => {
                         required
                     />
                     <label for="tags">Please select a tag:</label>
-                    <select name="tags" value={formData.tag} onChange={handleTagSelect} required>
+                    <select   className="form-tag" name="tags" value={formData.tag} onChange={handleTagSelect} required>
                         <option value="breakfast">breakfast</option>
                         <option value="drink">drink</option>
                         <option value="dessert">dessert</option>
@@ -105,7 +109,7 @@ const RecipeForm = ({ submitRecipe, handleFetch }) => {
                     </select>
 
 
-                    <button type="submit">SUBMIT</button>
+                    <button type="submit" className="form-submit">SUBMIT</button>
                 </form>
                 
             </section>
