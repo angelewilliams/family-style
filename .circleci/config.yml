@@ -1,18 +1,9 @@
 
 version: 2.1
-orbs: 
-  cypress: cypress-io/cypress@2.0.0
-jobs:
+orbs:
+  cypress: cypress-io/cypress@2
+workflows:
   build:
     jobs:
-      - cypress/run
-    steps:
-      - checkout
-      - run: 'npm install'
-      - run: 'npm run build'
-      - run: 'npm run test'
-
-workflows:
-  my_workflow:
-    jobs:
-      - build
+      - cypress/run:
+          name: E2E tests
