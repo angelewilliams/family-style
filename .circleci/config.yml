@@ -4,8 +4,8 @@ orbs:
   cypress: cypress-io/cypress@2.0.0
 jobs:
   build:
-    docker:
-      - image: cypress/included:3.2.0
+    jobs:
+      - cypress/run
     steps:
       - checkout
       - run: 'npm install'
