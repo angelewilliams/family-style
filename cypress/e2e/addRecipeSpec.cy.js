@@ -54,7 +54,7 @@ describe('User should be able to add a recipe', () => {
         cy.url().should('eq', 'http://localhost:3000/group1')
     })
 
-    it.skip('Should see added recipe on main page', () => {
+    it('Should see added recipe on main page', () => {
         cy.get('h3.group-link').click()
         cy.get('#1655075917927').contains('Chocolate Chip Cookies')
         cy.get('#1655075917927').contains('Notes')
