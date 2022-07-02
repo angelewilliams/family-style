@@ -1,6 +1,7 @@
 
 version: 2.1
-
+orbs: 
+  cypress: cypress-io/cypress@2.0.0
 jobs:
   build:
     docker:
@@ -8,8 +9,8 @@ jobs:
     steps:
       - checkout
       - run: 'npm install'
-      - run: 'npm start'
-      - run: 'npm run cypress'
+      - run: 'npm run build'
+      - run: 'npm run test'
 
 workflows:
   my_workflow:
