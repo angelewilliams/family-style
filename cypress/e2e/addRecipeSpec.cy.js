@@ -1,4 +1,4 @@
-describe('User should be able to add a recipe', () => {
+describe.skip('User should be able to add a recipe', () => {
     beforeEach(() => {
         cy.intercept('GET', 'https://family-style-api-aw.herokuapp.com/api/v1/recipes', { fixture: 'recipe-with-post.json' });
         cy.intercept('POST', 'https://family-style-api-aw.herokuapp.com/api/v1/recipes', {
