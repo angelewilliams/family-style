@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './RecipeForm.css'
 import backArrow from './../../Images/back.png'
@@ -12,8 +12,6 @@ const RecipeForm = ({ submitRecipe, handleFetch }) => {
         tag: 'breakfast'
     })
     const [submitted, setSubmitted]= useState(false)
-
-    const [error, setError] = useState('');
 
     const handleChangeTitle = (e) => {
         setFormData({ ...formData, title: e.target.value })
