@@ -4,15 +4,13 @@ import './ErrorPage.css'
 
 
 const ErrorPage = ({context, handleFetch}) => {
-    if(context == 'favorites'){
+    if(context === 'favorites'){
         return( <div>
             <h3>Looks like you haven't favorited any recipes yet!</h3>
             <div className="errorLink"><NavLink className="return-group1" to="/group1" onClick={handleFetch}> Browse Recipes</NavLink> to see if you want to save any!</div>
         </div>
         )
     }
-
-
 
     return (
         <div>

@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { Route, Switch, NavLink } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Route, Switch } from 'react-router-dom';
 import { fetchRecipes, postRecipe } from './../../apiCalls'
 import Recipes from './../Recipes/Recipes'
 import LoadingSpinner from '../Loading/LoadingSpinner';
 import Nav from './../Nav/Nav'
 import NoMatch from '../NoMatch/NoMatch';
 import RecipeForm from '../RecipeForm/RecipeForm'
-import ErrorPage from '../ErrorPage/ErrorPage';
 import './App.css';
 import GroupSelect from '../GroupSelect/GroupSelect';
 
@@ -88,6 +87,7 @@ const App = () => {
 
         <Route path="*">
           <NoMatch />
+          <>{error ? <h2>{error}</h2> : ''}</>
         </Route>
       </Switch>
     </main>
