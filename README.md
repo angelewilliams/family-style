@@ -25,7 +25,7 @@ FamilyStyle was a solo project assigned in the third module of the Front End Eng
 `npm start`
 This command runs the app in the development mode locally so that you can view and use the application in your browser.
 ```
-You can now view Caturday in the browser.
+You can now view FamilyStyle in the browser.
   Local:  http://localhost:3000
 ```
 
